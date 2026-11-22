@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Scripts/BlockTradeMain.cs" id="1_main"]
+[ext_resource type="Script" path="res://Scripts/BlockTradeSimulator.cs" id="2_simulator"]
+[ext_resource type="Script" path="res://Scripts/BlockTradeSoundManager.cs" id="3_sound"]
+[ext_resource type="Script" path="res://UI/BlockTradeMainMenu.cs" id="4_menu"]
+[ext_resource type="Script" path="res://UI/BlockTradeStory.cs" id="5_story"]
+[ext_resource type="Script" path="res://UI/BlockTradeUI.cs" id="6_ui"]
+[ext_resource type="Script" path="res://UI/BlockTradeCasino.cs" id="7_casino"]
+[ext_resource type="Script" path="res://UI/BlockTradeSettingsScreen.cs" id="8_settings"]
+[ext_resource type="Script" path="res://UI/BlockTradeNotifications.cs" id="9_notifications"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="BlockTradeSimulator" type="Node" parent="."]
+script = ExtResource("2_simulator")
+
+[node name="TickTimer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+autostart = false
+
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("3_sound")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("6_ui")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 1
+script = ExtResource("4_menu")
+
+[node name="Story" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("5_story")
+
+[node name="Casino" type="CanvasLayer" parent="."]
+layer = 3
+script = ExtResource("7_casino")
+
+[node name="Settings" type="CanvasLayer" parent="."]
+layer = 4
+script = ExtResource("8_settings")
+
+[node name="Notifications" type="CanvasLayer" parent="."]
+layer = 5
+script = ExtResource("9_notifications")
